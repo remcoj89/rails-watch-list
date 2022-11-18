@@ -8,5 +8,3 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:destroy]
 end
-
-# get: "/lists/1/bookmarks/new").to route_to(controller: "bookmarks", action: "new", list_id: "1")
