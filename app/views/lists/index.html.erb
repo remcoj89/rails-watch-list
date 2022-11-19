@@ -6,13 +6,7 @@
     <h1>List of movies</h1>
 </banner>
 
-
-
-  <ul>
     <% @lists.each do|list| %>
-      <li><%= link_to list.name, list_path(list) %> </li>
-      <% if list.photo.attached? %>
-        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
+      <p><%= link_to list.name, list_path(list) %></p>
+      <p><%= link_to "delete", list_path(list),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
     <% end %>
-  </ul>
