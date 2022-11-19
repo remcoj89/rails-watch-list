@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <div class="container">
+    <div class="navbar">
+      <img class="avatar-large "src="https://res.cloudinary.com/dipnvqfev/image/upload/v1668872424/development/gr-stocks-q8P8YoR6erg-unsplash_wzsofc.jpg" alt="">
+      <p><%= link_to "add a new list", new_list_path %></p>
+    </div>
     <%= yield %>
+    </div>
   </body>
 </html>

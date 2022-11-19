@@ -1,13 +1,20 @@
-<div class="navbar">
-  <p><%= link_to "add a new list", new_list_path %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dipnvqfev/image/upload/v1668865637/development/geoffrey-moffett-TFRezw7pQwI-unsplash_cbu6b1.jpg);">
+  <div class="container">
+    <h1>Select <strong>your</strong> favorite <strong>movies</strong>!</h1>
+  </div>
 </div>
 
-<banner>
-    <h1>List of movies</h1>
-</banner>
-
-    <% @lists.each do|list| %>
-      <p><%= link_to list.name, list_path(list) %></p>
-      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-      <p><%= link_to "delete", list_path(list),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+<div class="container text-center">
+  <h2>My lists</h2>
+    <div class="row">
+      <% @lists.each do|list| %>
+        <div class="col-3">
+          <div class="card-trip">
+            <p><%= link_to list.name, list_path(list) %></p>
+            <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+            <p><%= link_to "🗑️", list_path(list),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+        </div>
+      </div>
     <% end %>
+  </div>
+</div>
