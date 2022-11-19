@@ -8,5 +8,6 @@
 
     <% @lists.each do|list| %>
       <p><%= link_to list.name, list_path(list) %></p>
+      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
       <p><%= link_to "delete", list_path(list),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
     <% end %>
